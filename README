@@ -1,0 +1,3 @@
+Repository for my .vimrc and .vim files. Also includes my .bashrc, for
+safekeeping. Uses a script to automatically copy, commit, push, and delete the
+files so that I don't have extra copies to take up space.
