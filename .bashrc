@@ -141,6 +141,8 @@ function git_prompt {
             gitmessage+="\[\033[1;31m\]❌ (untracked files)"
         elif [[ $(git status 2>&1 | grep -o "Changes to be committed:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
+        elif [[ $(git status 2>&1 | grep -o "Changes not staged for commit:") ]]; then
+            gitmessage+="\[\033[1;31m\]❌ (commit changes)"
         else
             gitmessage+="\[\033[0;32m\]✓"
         fi

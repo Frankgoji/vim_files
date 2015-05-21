@@ -1,6 +1,7 @@
 let g:bullet = "•"
 let s:formerformatops = "tcroq"
 let &l:formatoptions = s:formerformatops
+set textwidth=80
 
 setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
 
@@ -14,7 +15,6 @@ function! WordProcessor()
     setlocal noautoindent
     setlocal wrap
     setlocal linebreak
-    setlocal textwidth=80
     let &l:formatoptions = s:formerformatops . "2"
     inoremap <buffer> <cr> <cr><tab>
     nnoremap <buffer> o A<cr><tab>
@@ -32,8 +32,8 @@ function! Outliner()
     let temp .= g:bullet . "\\)\\s*"
     let &l:formatlistpat = temp
     inoremap <buffer> <cr> <esc>:execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
-    inoremap <buffer> <tab> <esc>>>`^4la
-    inoremap <buffer> <S-tab> <esc><<`^a
+    inoremap <buffer> <tab> <esc>>>`^4li
+    inoremap <buffer> <S-tab> <esc><<`^i
     nnoremap <buffer> o :execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
     nnoremap <buffer> O I<cr><esc>k:execute "normal! a" . g:bullet . " "<cr>a
 endfunction

@@ -1,0 +1,19 @@
+#! /bin/bash
+
+# Copies the .bashrc, .vimrc, and the .vim folder to this directory, then adds
+# them to git, commits them, pushes to the remote repository, and deletes the
+# files in order to save space. This script is only meant to be used in the
+# repository directory.
+
+cp ~/.bashrc ~/.vimrc .
+cp -r ~/.vim .
+
+git add .bashrc .vimrc .vim copypush
+
+date=$(date)
+git commit -am "Commit on $date"
+
+git push origin master
+
+rm .bashrc .vimrc
+rm -r .vim
