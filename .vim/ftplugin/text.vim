@@ -26,16 +26,31 @@ endfunction
 " the right place regardless of whether on the first line or not.
 function! Outliner()
     call WordProcessor()
-    setlocal autoindent
+    setlocal noautoindent
     let &l:formatoptions = s:formerformatops . "n"
     let temp = "^\\s*\\(\\d\\+[\\]:.)}\\t\ ]\\|"
     let temp .= g:bullet . "\\)\\s*"
     let &l:formatlistpat = temp
+    inoremap <buffer> <tab> <C-o>:stopinsert<cr>:call Tab(">")<cr>i
+    inoremap <buffer> <S-tab> <C-o>:stopinsert<cr>:call Tab("<")<cr>i
     inoremap <buffer> <cr> <esc>:execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
-    inoremap <buffer> <tab> <esc>>>`^4li
-    inoremap <buffer> <S-tab> <esc><<`^i
     nnoremap <buffer> o :execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
     nnoremap <buffer> O I<cr><esc>k:execute "normal! a" . g:bullet . " "<cr>a
+endfunction
+
+" Function for handling tabs and shift-tabs in insert mode so that the cursor
+" stays in the right place.
+function! Tab(dir)
+    let cursor_pos = getpos('.')
+    if a:dir ==# ">"
+        normal! >>
+        let cursor_pos[2] += 4
+        call cursor(cursor_pos[1:])
+    elseif a:dir ==# "<"
+        normal! <<
+        let cursor_pos[2] -= 4
+        call cursor(cursor_pos[1:])
+    endif
 endfunction
 
 " Function for o, O, and <cr> that puts the bullet in the right place,
