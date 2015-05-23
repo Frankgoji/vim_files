@@ -5,7 +5,7 @@ set textwidth=80
 
 setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
 
-inoremap <buffer> <leader>b ÿ<esc>:execute "normal! r" . g:bullet<cr>a
+inoremap <buffer> <leader>b a<esc>:execute "normal! r" . g:bullet<cr>a
 nnoremap <buffer> <leader>wp :call WordProcessor()<cr>
 nnoremap <buffer> <leader>cp :call TextProcess#CopyPaste()<cr>
 nnoremap <buffer> <leader>ol :call Outliner()<cr>
@@ -31,8 +31,8 @@ function! Outliner()
     let temp = "^\\s*\\(\\d\\+[\\]:.)}\\t\ ]\\|"
     let temp .= g:bullet . "\\)\\s*"
     let &l:formatlistpat = temp
-    inoremap <buffer> <tab> <C-o>:stopinsert<cr>:call Tab(">")<cr>i
-    inoremap <buffer> <S-tab> <C-o>:stopinsert<cr>:call Tab("<")<cr>i
+    inoremap <buffer> <tab> a<esc>:call Tab(">")<cr>cl
+    inoremap <buffer> <S-tab> a<esc>:call Tab("<")<cr>cl
     "inoremap <buffer> <cr> <esc>:execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
     "nnoremap <buffer> o :execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
     "nnoremap <buffer> O I<cr><esc>k:execute "normal! a" . g:bullet . " "<cr>a
