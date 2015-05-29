@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/cc/cs61c/sp15/class/cs61c-kz/proj2-gw-kz'
-let g:netrw_dirhist_2='/home/cc/cs61c/sp15/class/cs61c-kz/proj2-gw-kz/test-files'
-let g:netrw_dirhist_3='/home/cc/cs61c/sp15/class/cs61c-kz/proj2-gw-kz/test-files/out-files'
-let g:netrw_dirhist_4='/home/cc/cs61c/sp15/class/cs61c-kz/proj2-gw-kz/test-files'
-let g:netrw_dirhist_5='/home/cc/cs61c/sp15/class/cs61c-kz/proj2-gw-kz'
-let g:netrw_dirhist_6='/home/cc/cs61c/sp15/class/cs61c-kz'
-let g:netrw_dirhist_7='/home/cc/cs61c/sp15/class/cs61c-kz/labs/11/spark-wc-out-docwordcount-medium'
-let g:netrw_dirhist_8='/media/frankgoji/Windows/Users/Frankgoji/Documents/personal_projects/sshf/.git'
-let g:netrw_dirhist_9='/media/frankgoji/Windows/Users/Frankgoji/Documents/personal_projects/bookmarklets'
+let g:netrw_dirhist_cnt =0

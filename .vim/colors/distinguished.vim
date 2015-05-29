@@ -24,7 +24,8 @@
 		for [group, group_colors] in items(a:color_dict)
 			exec 'hi ' . group
 				\ . ' ctermfg=' . (group_colors[0] == '' ? 'NONE' :       group_colors[0])
-				\ . ' ctermbg=' . (group_colors[1] == '' ? 'NONE' :       group_colors[1])
+				"\ . ' ctermbg=' . (group_colors[1] == '' ? 'NONE' :       group_colors[1])
+                \ . ' ctermbg=NONE'
 				\ . '   cterm=' . (group_colors[2] == '' ? 'NONE' :       group_colors[2])
 				\
 				\ . '   guifg=' . (group_colors[3] == '' ? 'NONE' : '#' . group_colors[3])

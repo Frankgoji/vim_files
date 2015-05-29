@@ -14,6 +14,8 @@ set hidden
 set linebreak
 set incsearch
 set hlsearch
+set textwidth=80
+set colorcolumn=+1
 syntax on
 " }}}
 
@@ -52,8 +54,6 @@ nnoremap <leader>ns :set nospell<cr>
 nnoremap <leader>sp :setlocal spell spelllang=en_us
 nnoremap <leader>ss :call Strip_spaces()<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>ma :match Error /\v.%82v.*$/<cr>
-nnoremap <leader>mn :match NONE<cr>
 " }}}
 
 " Visual mappings {{{
