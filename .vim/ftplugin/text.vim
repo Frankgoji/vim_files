@@ -80,4 +80,3 @@ function! Enter(key)
     execute "normal! i\<c-o>" . prev_bullet_pos . "i \<esc>"
     execute "normal! i" . g:bullet . "\<right>"
 endfunction
-" now only need to iron out the kinks
