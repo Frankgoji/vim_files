@@ -4,6 +4,7 @@ let &l:formatoptions = s:formerformatops
 set textwidth=80
 
 setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
+setlocal spell spelllang=en_us
 
 inoremap <buffer> <leader>b a<esc>:execute "normal! r" . g:bullet<cr>a
 nnoremap <buffer> <leader>wp :call WordProcessor()<cr>
@@ -33,9 +34,9 @@ function! Outliner()
     let &l:formatlistpat = temp
     inoremap <buffer> <tab> a<esc>:call Tab(">")<cr>cl
     inoremap <buffer> <S-tab> a<esc>:call Tab("<")<cr>cl
-    "inoremap <buffer> <cr> <esc>:execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
-    "nnoremap <buffer> o :execute "normal! A" . g:bullet . " "<cr>hi<cr><esc>XxA
-    "nnoremap <buffer> O I<cr><esc>k:execute "normal! a" . g:bullet . " "<cr>a
+    inoremap <buffer> <cr> a<esc>:call Enter("cr")<cr>a
+    nnoremap <buffer> o ia<esc>:call Enter("o")<cr>A
+    nnoremap <buffer> O ia<esc>:call Enter("O")<cr>A
 endfunction
 
 " Function for handling tabs and shift-tabs in insert mode so that the cursor
@@ -59,11 +60,24 @@ function! Enter(key)
     " Search for last bullet, from 0th line to current, to find the position,
     " then go to appropriate line, insert appropriate number of spaces, and
     " the bullet.
+    normal! ma
+    let prev_bullet_pos = 0
+    let cursor_pos = getpos('.')
+    let lnum = cursor_pos[1] + 1
+    try
+        execute "0," . lnum . "?" . g:bullet
+        let new_cursor_pos = getpos('.')
+        let prev_bullet_pos += new_cursor_pos[2]
+    endtry
+    normal! `a
     if a:key ==# "o"
-        echo "o pressed"
+        execute "normal! xo\<esc>Vc\<esc>"
     elseif a:key ==# "O"
-        echo "Big O pressed"
-    elseif a:key ==# "<cr>"
-        echo "<cr> pressed"
+        execute "normal! xO\<esc>Vc\<esc>"
+    elseif a:key ==# "cr"
+        execute ":normal! r\<cr>"
     endif
+    execute "normal! i\<c-o>" . prev_bullet_pos . "i \<esc>"
+    execute "normal! i" . g:bullet . "\<right>"
 endfunction
+" now only need to iron out the kinks

@@ -34,6 +34,7 @@ inoremap <leader>[ [
 inoremap <leader>" "
 inoremap <leader>< <><left>
 inoremap jk <Esc>
+inoremap jK <Esc>
 inoremap <leader><Cr> <Cr><Esc>O
 inoremap <c-u> <Esc>viwUea
 " }}}
