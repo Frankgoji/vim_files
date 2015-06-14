@@ -6,6 +6,7 @@ set textwidth=80
 setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
 setlocal spell spelllang=en_us
 
+inoremap <buffer> <esc> :call Deoutliner()<cr>
 inoremap <buffer> <leader>b a<esc>:execute "normal! r" . g:bullet<cr>a
 nnoremap <buffer> <leader>wp :call WordProcessor()<cr>
 nnoremap <buffer> <leader>cp :call TextProcess#CopyPaste()<cr>
@@ -27,6 +28,7 @@ endfunction
 " the right place regardless of whether on the first line or not.
 function! Outliner()
     call WordProcessor()
+    setlocal autoindent
     let &l:formatoptions = s:formerformatops . "n"
     let temp = "^\\s*\\(\\d\\+[\\]:.)}\\t\ ]\\|"
     let temp .= g:bullet . "\\)\\s*"
@@ -40,6 +42,14 @@ endfunction
 
 " Write a de-outliner function, map Esc to it
 " Figure out what to do when it goes multiple lines
+function! Deoutliner()
+    let &l:formatoptions = s:formerformatops
+    iunmap <buffer> <tab>
+    iunmap <buffer> <S-tab>
+    iunmap <buffer> <cr>
+    nunmap <buffer> o
+    nunmap <buffer> O
+endfunction
 
 " Function for handling tabs and shift-tabs in insert mode so that the cursor
 " stays in the right place.
