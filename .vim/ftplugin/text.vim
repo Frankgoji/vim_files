@@ -27,7 +27,6 @@ endfunction
 " the right place regardless of whether on the first line or not.
 function! Outliner()
     call WordProcessor()
-    setlocal noautoindent
     let &l:formatoptions = s:formerformatops . "n"
     let temp = "^\\s*\\(\\d\\+[\\]:.)}\\t\ ]\\|"
     let temp .= g:bullet . "\\)\\s*"
@@ -38,6 +37,9 @@ function! Outliner()
     nnoremap <buffer> o ia<esc>:call Enter("o")<cr>A
     nnoremap <buffer> O ia<esc>:call Enter("O")<cr>A
 endfunction
+
+" Write a de-outliner function, map Esc to it
+" Figure out what to do when it goes multiple lines
 
 " Function for handling tabs and shift-tabs in insert mode so that the cursor
 " stays in the right place.
