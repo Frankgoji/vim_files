@@ -1,4 +1,5 @@
 let mapleader = "-"
+
 let g:tex_flavor = "latex"
 
 " Certain settings {{{

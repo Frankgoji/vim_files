@@ -3,7 +3,7 @@ set shiftwidth=2
 set softtabstop=2
 
 inoremap <buffer> <leader>co /* */<Esc>hi
-inoremap <buffer> <leader>sc <Esc>mqA;<Esc>`qa
+inoremap <buffer> <leader>; <Esc>mqA;<Esc>`qa
 vnoremap <buffer> <leader>co <Esc>`<i/* <Esc>`>a */<Esc>
 
 " Function initializing a new C program

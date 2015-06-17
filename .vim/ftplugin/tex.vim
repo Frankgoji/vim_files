@@ -9,3 +9,8 @@ inoremap <buffer> $ $$<left>
 inoremap <buffer> <leader>$ $
 inoremap <buffer> " ``"<left>
 inoremap <buffer> <leader>' `'<left>
+
+function! New_double_spaced_essay()
+    0 read ~/.vim/templates/DOUBLE_SPACED_ESSAY.tex
+    $ delete
+endfunction
