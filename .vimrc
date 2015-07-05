@@ -37,7 +37,7 @@ inoremap <leader>< <><left>
 inoremap jk <Esc>
 inoremap jK <Esc>
 inoremap <leader><Cr> <Cr><Esc>O
-inoremap <c-u> <Esc>viwUea
+inoremap <c-u> <c-o>:stopinsert<cr>viwUea
 " }}}
 
 " Normal mappings {{{

@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# maps xdg-open to open. Makes things more convenient.
+function open {
+    xdg-open $@
+}
+
 # My personal Bash prompt
 # Add functionality to test when you're in a git repository, using
 # output from git status instead of the .git directory
