@@ -1,4 +1,5 @@
 inoremap <buffer> < <><left>
 
 " Here will be the testing grounds for the tag highlighting
-highlight
+syntax match openTag "\v<[^/!][^>]*>"
+syntax match closeTag "\v<[/!][^>]*>"
