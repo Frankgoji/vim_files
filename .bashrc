@@ -116,6 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+##### PERSONAL CHANGES #####
+
+# Add the dv script to the path
+PATH=$PATH:~/Documents/personal_projects/
+
 # maps xdg-open to open. Makes things more convenient.
 function open {
     xdg-open $@
@@ -124,6 +130,13 @@ function open {
 # does a quick git commit with the timestamp
 function git_time {
     git commit -am "Commit on $(date)"
+}
+
+# minimalistic error function. Prints an error message before exiting with
+# status 1.
+function error {
+    echo "$@"
+    exit 1
 }
 
 # My personal Bash prompt
