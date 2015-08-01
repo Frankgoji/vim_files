@@ -9,6 +9,10 @@ inoremap <buffer> $ $$<left>
 inoremap <buffer> <leader>$ $
 inoremap <buffer> " ``"<left>
 inoremap <buffer> <leader>' `'<left>
+inoremap <buffer> <leader>em \emph{}<left>
+inoremap <buffer> <leader>bf \textbf{}<left>
+inoremap <buffer> <leader>ul \underline{}<left>
+inoremap <buffer> <leader>sc \textsc{}<left>
 
 function! New_double_spaced_essay()
     0 read ~/.vim/templates/DOUBLE_SPACED_ESSAY.tex
