@@ -120,7 +120,10 @@ fi
 ##### PERSONAL CHANGES #####
 
 # Add the dv script to the path
-PATH=$PATH:~/Documents/personal_projects/
+PATH=$PATH:~/Documents/personal_projects/bookmarklets/vid
+
+# Add the queue environment variable
+export QUEUE="something"
 
 # maps xdg-open to open. Makes things more convenient.
 function open {
