@@ -2,7 +2,6 @@ colo pablo
 
 inoremap <buffer> <leader>c //<Space>
 inoremap <buffer> <leader>dc /** */<Esc>hi
-inoremap <buffer> <leader>; <Esc>mqA;<Esc>`qa
 vnoremap <buffer> <leader>co <Esc>`<i/* <Esc>`>a */<Esc>
 
 " Change so that it does the Test one when name ends with Test

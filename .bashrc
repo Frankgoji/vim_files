@@ -119,11 +119,11 @@ fi
 
 ##### PERSONAL CHANGES #####
 
-# Add the dv script to the path
-PATH=$PATH:~/Documents/personal_projects/bookmarklets/vid
+# Add the dv and sshf script to the path
+PATH=$PATH:~/Documents/personal_projects/bookmarklets/vid:~/Documents/personal_projects/sshf
 
 # Add the queue environment variable
-export QUEUE="something"
+export QUEUE="https://www.youtube.com/playlist?list=PLQMsPtgISEJomjGvkY8DbAV-TILxE7rUc"
 
 # maps xdg-open to open. Makes things more convenient.
 function open {

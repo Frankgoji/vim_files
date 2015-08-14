@@ -33,6 +33,7 @@ inoremap <leader>( (
 inoremap <leader>{ {
 inoremap <leader>[ [
 inoremap <leader>" "
+inoremap <leader>; <Esc>mqA;<Esc>`qa
 inoremap <leader>< <><left>
 inoremap jk <Esc>
 inoremap jK <Esc>
@@ -100,6 +101,7 @@ augroup Newfile
     autocmd BufNewFile * :call New_File_Greeter()
     autocmd BufNewFile *.java :call New_Java()
     autocmd BufNewFile *.c :call New_C()
+    autocmd BufNewFile *.html :call New_html()
 augroup END
 
 augroup Writefile
