@@ -138,7 +138,7 @@ function git_time {
 # minimalistic error function. Prints an error message before exiting with
 # status 1.
 function error {
-    echo "$@"
+    echo "$@" 1>&2
     exit 1
 }
 
