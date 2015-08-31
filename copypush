@@ -5,7 +5,7 @@
 # files in order to save space. This script is only meant to be used in the
 # repository directory.
 
-cp ~/.bashrc ~/.vimrc .
+cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc .
 cp -r ~/.vim .
 
 git add .bashrc .vimrc .vim copypush
