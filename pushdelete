@@ -1,0 +1,3 @@
+#! /bin/bash
+
+mv .bashrc .bash_aliases .vim .vimrc .rtorrent.rc ~
