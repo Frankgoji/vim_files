@@ -157,6 +157,7 @@ function prompt_command {
     PS1+=" \[\033[0m\]\$ "
 }
 
+# Maybe rewrite this so that i don't recall git status so many times?
 function git_prompt {
     if [[ $(git status 2>&1 | grep -o "fatal: Not a git repository") ]]; then
         echo ""
@@ -175,13 +176,6 @@ function git_prompt {
         gitmessage+="\[\033[1;37m\]] "
         echo "$gitmessage"
     fi
-}
-
-# finds the .git directory, if necessary in all the parent directories. echos
-# "false" if none found, otherwise returns relevant info, like commit state,
-# untracked state, which branch. always returns to the original directory (?)
-function find_git {
-    dir=$(pwd -P)
 }
 
 PROMPT_COMMAND=prompt_command
