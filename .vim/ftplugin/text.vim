@@ -6,7 +6,7 @@ set textwidth=80
 setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
 setlocal spell spelllang=en_us
 
-inoremap <buffer> <esc> :call Deoutliner()<cr>
+inoremap <buffer> <leader><esc> <esc>:call Deoutliner()<cr>
 inoremap <buffer> <leader>b a<esc>:execute "normal! r" . g:bullet<cr>a
 nnoremap <buffer> <leader>wp :call WordProcessor()<cr>
 nnoremap <buffer> <leader>cp :call TextProcess#CopyPaste()<cr>
@@ -80,6 +80,8 @@ function! Enter(key)
         execute "0," . lnum . "?" . g:bullet
         let new_cursor_pos = getpos('.')
         let prev_bullet_pos += new_cursor_pos[2]
+    catch
+        " Do nothing
     endtry
     normal! `a
     if a:key ==# "o"

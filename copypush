@@ -8,7 +8,7 @@
 cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc .
 cp -r ~/.vim .
 
-git add .bashrc .vimrc .vim copypush
+git add .bashrc .vimrc .vim copypush .dircolors
 
 date=$(date)
 git commit -am "Commit on $date"

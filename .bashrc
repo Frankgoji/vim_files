@@ -119,6 +119,9 @@ fi
 
 ##### PERSONAL CHANGES #####
 
+# Make it so that the directory colors are readable
+eval `dircolors ~/.dircolors`
+
 # Add the dv and sshf script to the path
 PATH=$PATH:~/Documents/personal_projects/bookmarklets/vid:~/Documents/personal_projects/sshf
 
@@ -159,16 +162,17 @@ function prompt_command {
 
 # Maybe rewrite this so that i don't recall git status so many times?
 function git_prompt {
-    if [[ $(git status 2>&1 | grep -o "fatal: Not a git repository") ]]; then
+    gitstat=$(git status 2>&1)
+    if [[ $(echo $gitstat | grep -o "fatal: Not a git repository") ]]; then
         echo ""
     else
         gitmessage=""
         gitmessage+="\[\033[1;37m\][GIT "
-        if [[ $(git status 2>&1 | grep -o "Untracked files:") ]]; then
+        if [[ $(echo $gitstat | grep -o "Untracked files:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (untracked files)"
-        elif [[ $(git status 2>&1 | grep -o "Changes to be committed:") ]]; then
+        elif [[ $(echo $gitstat | grep -o "Changes to be committed:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
-        elif [[ $(git status 2>&1 | grep -o "Changes not staged for commit:") ]]; then
+        elif [[ $(echo $gitstat| grep -o "Changes not staged for commit:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
         else
             gitmessage+="\[\033[0;32m\]✓"
