@@ -1,0 +1,3 @@
+attrcolor b ".I"
+defbce "on"
+term screen-256color

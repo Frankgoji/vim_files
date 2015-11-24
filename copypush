@@ -5,15 +5,15 @@
 # files in order to save space. This script is only meant to be used in the
 # repository directory.
 
-cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors .
+cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .
 cp -r ~/.vim .
 
-git add .bashrc .vimrc .vim copypush .dircolors
+git add .bashrc .vimrc .vim copypush .dircolors .screenrc
 
 date=$(date)
 git commit -am "Commit on $date"
 
 git push origin master
 
-rm .bashrc .vimrc .bash_aliases .rtorrent.rc
+rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc
 rm -r .vim

@@ -183,3 +183,5 @@ function git_prompt {
 }
 
 PROMPT_COMMAND=prompt_command
+
+export TERM=xterm-256color

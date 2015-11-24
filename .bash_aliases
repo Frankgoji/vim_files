@@ -1,7 +1,10 @@
 #! /bin/bash
 
-function cdhw {
-    cd "/home/frankgoji/Documents/HW/fa15/$1"
-}
+alias cdhw="cd ~/Documents/HW/fa15"
 
-alias acro="wine /media/frankgoji/Windows/Program\ Files\ \(x86\)/Adobe/Reader\ 11.0/Reader/AcroRd32.exe"
+function sync_backup {
+    dropbox start
+    zip -r dejadup.zip ~/deja-dup
+    mv dejadup.zip ~/Dropbox/backup
+    dropbox stop
+}
