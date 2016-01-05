@@ -6,12 +6,23 @@
 \newcommand\lm{.5in}
 
 \usepackage{fancyhdr}
-\usepackage{setspace}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[headheight=15pt,margin=1in]{geometry}
 
+% User-made commands and environments
 \newcommand{\nl}{\hfill \break}
+
+\newenvironment{mycite}{
+    \list{}{
+        \itemindent=-\parindent
+        \leftmargin=\lm
+        \topsep=0pt
+        \partopsep=0pt}\item\relax
+}
+{
+    \endlist
+}
 
 % Fancy header and footer
 \pagestyle{fancy}
@@ -22,7 +33,7 @@
 \parindent=0in
 \raggedright
 
-\doublespacing
+\linespread{2}
 \begin{document}
 
 % Header information
