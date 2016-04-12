@@ -160,7 +160,7 @@ function prompt_command {
     PS1+=" \[\033[0m\]\$ "
 }
 
-# Maybe rewrite this so that i don't recall git status so many times?
+# Add something to tell which branch and when to push
 function git_prompt {
     gitstat=$(git status 2>&1)
     if [[ $(echo $gitstat | grep -o "fatal: Not a git repository") ]]; then

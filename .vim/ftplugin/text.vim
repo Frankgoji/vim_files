@@ -7,7 +7,7 @@ setlocal thesaurus+=/home/frankgoji/.vim/thesaurus/mthesaur.txt
 setlocal spell spelllang=en_us
 
 inoremap <buffer> <leader><esc> <esc>:call Deoutliner()<cr>
-inoremap <buffer> <leader>b a<esc>:execute "normal! r" . g:bullet<cr>a
+inoremap <buffer> <leader>* a<esc>:execute "normal! r" . g:bullet<cr>a
 nnoremap <buffer> <leader>wp :call WordProcessor()<cr>
 nnoremap <buffer> <leader>cp :call TextProcess#CopyPaste()<cr>
 nnoremap <buffer> <leader>ol :call Outliner()<cr>

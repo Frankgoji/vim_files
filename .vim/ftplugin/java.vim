@@ -1,5 +1,3 @@
-colo pablo
-
 inoremap <buffer> <leader>c //<Space>
 inoremap <buffer> <leader>dc /** */<Esc>hi
 vnoremap <buffer> <leader>co <Esc>`<i/* <Esc>`>a */<Esc>
