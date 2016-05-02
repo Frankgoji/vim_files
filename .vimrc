@@ -114,3 +114,12 @@ augroup Filetype_vim
     autocmd Filetype vim nnoremap <leader>co I" <Esc>
 augroup END
 " }}}
+
+" Highlight corrections {{{
+highlight SpellBad ctermbg=None ctermfg=9
+highlight Todostring ctermbg=green
+highlight TodoEllipses ctermbg=red
+
+call matchadd('Todostring', '\(TODO.* \)\@<=.*')
+call matchadd('TodoEllipses', '\( \)\@<=[\.]\{3\}')
+" }}}

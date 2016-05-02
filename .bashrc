@@ -145,6 +145,16 @@ function error {
     exit 1
 }
 
+# renames filename(s) to get rid of spaces
+function nospace {
+    exit 0
+}
+
+# tests nospace
+function testnospace {
+    exit 0
+}
+
 # My personal Bash prompt
 # Add functionality to test when you're in a git repository, using
 # output from git status instead of the .git directory
