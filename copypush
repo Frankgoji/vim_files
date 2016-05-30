@@ -15,5 +15,5 @@ git commit -am "Commit on $date"
 
 git push origin master
 
-rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc
+rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc .dircolors
 rm -r .vim
