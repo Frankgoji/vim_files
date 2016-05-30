@@ -120,6 +120,6 @@ highlight SpellBad ctermbg=None ctermfg=9
 highlight Todostring ctermbg=green
 highlight TodoEllipses ctermbg=red
 
-call matchadd('Todostring', '\(TODO.* \)\@<=.*')
+call matchadd('Todostring', '\(\cTODO.* \)\@<=.*')
 call matchadd('TodoEllipses', '\( \)\@<=[\.]\{3\}')
 " }}}
