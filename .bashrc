@@ -156,8 +156,6 @@ function testnospace {
 }
 
 # My personal Bash prompt
-# Add functionality to test when you're in a git repository, using
-# output from git status instead of the .git directory
 function prompt_command {
     prev=$?
     PS1="\[\033[1;33m\][\t] \[\033[1;32m\]\u\[\033[0m\]@\[\033[1;34m\]\h:\[\033[0;33m\]\w\[\033[0m\]\n"
@@ -170,14 +168,17 @@ function prompt_command {
     PS1+=" \[\033[0m\]\$ "
 }
 
-# Add something to tell which branch and when to push
+# TODO: and when to push (what does that mean again?)
+# returns git prompt
 function git_prompt {
     gitstat=$(git status 2>&1)
     if [[ $(echo $gitstat | grep -o "fatal: Not a git repository") ]]; then
         echo ""
     else
         gitmessage=""
-        gitmessage+="\[\033[1;37m\][GIT "
+        gitmessage+="\[\033[1;37m\][GIT:"
+        branch=$(echo $gitstat | sed "s/On branch //" | sed "s/ .*//")
+        gitmessage+="$branch "
         if [[ $(echo $gitstat | grep -o "Untracked files:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (untracked files)"
         elif [[ $(echo $gitstat | grep -o "Changes to be committed:") ]]; then
