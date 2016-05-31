@@ -168,7 +168,6 @@ function prompt_command {
     PS1+=" \[\033[0m\]\$ "
 }
 
-# TODO: and when to push (what does that mean again?)
 # returns git prompt
 function git_prompt {
     gitstat=$(git status 2>&1)
