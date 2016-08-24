@@ -171,18 +171,18 @@ function prompt_command {
 # returns git prompt
 function git_prompt {
     gitstat=$(git status 2>&1)
-    if [[ $(echo $gitstat | grep -o "fatal: Not a git repository") ]]; then
+    if [[ $(echo $gitstat | grep "fatal: Not a git repository") ]]; then
         echo ""
     else
         gitmessage=""
         gitmessage+="\[\033[1;37m\][GIT:"
         branch=$(echo $gitstat | sed "s/On branch //" | sed "s/ .*//")
         gitmessage+="$branch "
-        if [[ $(echo $gitstat | grep -o "Untracked files:") ]]; then
+        if [[ $(echo $gitstat | grep "Untracked files:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (untracked files)"
-        elif [[ $(echo $gitstat | grep -o "Changes to be committed:") ]]; then
+        elif [[ $(echo $gitstat | grep "Changes to be committed:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
-        elif [[ $(echo $gitstat| grep -o "Changes not staged for commit:") ]]; then
+        elif [[ $(echo $gitstat| grep "Changes not staged for commit:") ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
         else
             gitmessage+="\[\033[0;32m\]✓"
