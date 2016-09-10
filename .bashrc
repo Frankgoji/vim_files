@@ -195,3 +195,6 @@ function git_prompt {
 PROMPT_COMMAND=prompt_command
 
 export TERM=xterm-256color
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/home/franklin/anaconda3/bin:$PATH"
