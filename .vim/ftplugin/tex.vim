@@ -28,6 +28,6 @@ endfunction
 
 function! Itemlist(l, pre, post)
     for c in split(a:l, ',')
-        execute "normal! ccitem[" . a:pre . c . a:post . "]\<esc>o\<esc>"
+        execute "normal! cc\\item[" . a:pre . c . a:post . "]\<esc>o\<esc>"
     endfor
 endfunction
