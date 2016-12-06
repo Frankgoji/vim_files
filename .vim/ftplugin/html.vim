@@ -1,5 +1,5 @@
-    " inoremap <buffer> < <><left>
-    inoremap <buffer> > ><esc>:call Tag_complete()<cr>a
+" inoremap <buffer> < <><left>
+inoremap <buffer> > ><esc>:call Tag_complete()<cr>a
 inoremap <buffer> <leader># <!-----><esc>2hi
 
 function! New_html()

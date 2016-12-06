@@ -113,6 +113,11 @@ augroup Filetype_vim
     autocmd Filetype vim setlocal foldmethod=marker
     autocmd Filetype vim nnoremap <leader>co I" <Esc>
 augroup END
+
+augroup Tex
+    autocmd!
+    autocmd Filetype tex setlocal indentexpr=
+augroup END
 " }}}
 
 " Highlight corrections {{{

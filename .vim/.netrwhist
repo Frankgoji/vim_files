@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/frankgoji/.vim/ftplugin'
-let g:netrw_dirhist_2='/media/frankgoji/Windows/Users/Frankgoji/Documents/.conf'
-let g:netrw_dirhist_3='/home/franklin/Documents/personal_projects/sshf/.git'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/franklin/Documents'
+let g:netrw_dirhist_2='/home/franklin/Documents/HW'
+let g:netrw_dirhist_3='/home/franklin/Documents/HW/fa16'
+let g:netrw_dirhist_4='/home/franklin/Documents/HW/fa16/EE16A'
+let g:netrw_dirhist_5='/home/franklin/Documents/HW/fa16/EE16A/hw09'
