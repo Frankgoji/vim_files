@@ -18,7 +18,7 @@ inoremap <buffer> <leader>ul \underline{}<left>
 inoremap <buffer> <leader>sc \textsc{}<left>
 inoremap <buffer> <leader>tt \texttt{}<left>
 inoremap <buffer> <leader>il <esc>:call Itemlist('', '(', ')')<left><left><left><left><left><left><left><left><left><left><left><left>
-inoremap <buffer> <leader> xo <c-x><c-o>
+inoremap <buffer> <leader>xo <c-x><c-o>
 
 vnoremap <buffer> <leader>$ <Esc>`>a$<Esc>`<i$<Esc>`>ll
 

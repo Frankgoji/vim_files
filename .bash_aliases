@@ -1,3 +1,3 @@
 #! /bin/bash
 
-alias cdhw="cd ~/Documents/HW/fa16"
+alias cdhw="cd ~/Documents/HW/sp17"

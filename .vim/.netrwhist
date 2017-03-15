@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/franklin/Documents'
 let g:netrw_dirhist_2='/home/franklin/Documents/HW'
 let g:netrw_dirhist_3='/home/franklin/Documents/HW/fa16'
 let g:netrw_dirhist_4='/home/franklin/Documents/HW/fa16/EE16A'
 let g:netrw_dirhist_5='/home/franklin/Documents/HW/fa16/EE16A/hw09'
+let g:netrw_dirhist_6='/home/franklin/Documents/personal_projects/bookmarklets/vid'
+let g:netrw_dirhist_7='/home/franklin/Documents/HW/sp17/CS 9F/book_problems/reverse.cpp'
