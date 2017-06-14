@@ -11,7 +11,9 @@ cp -r ~/.vim .
 git add .bashrc .vimrc .vim copypush .dircolors .screenrc
 
 date=$(date)
-git commit -am "Commit on $date"
+printf "Commit message: "
+read message
+git commit -am "Commit on $date; message: $message"
 
 git push origin master
 

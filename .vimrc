@@ -49,8 +49,6 @@ nnoremap / /\v
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader><c-u> viwUe
-nnoremap <leader>cb :ConqueTerm bash<cr>
-nnoremap <leader>cs :ConqueTermVSplit bash<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>dh :nohlsearch<cr>
 nnoremap <leader>ns :set nospell<cr>
