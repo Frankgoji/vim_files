@@ -10,7 +10,7 @@
 cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .
 cp -r ~/.vim .
 
-git add .bashrc .vimrc .vim copypush .dircolors .screenrc
+git add .bashrc .vimrc .vim copypush pushdelete .dircolors .screenrc
 
 if [[ $# == 0 ]]; then
     date=$(date)
@@ -23,5 +23,5 @@ if [[ $# == 0 ]]; then
     rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc .dircolors
     rm -r .vim
 elif [[ $1 == "-diff" ]]; then
-    git diff
+    git diff --staged
 fi
