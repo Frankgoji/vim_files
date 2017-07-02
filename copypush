@@ -5,17 +5,23 @@
 # files in order to save space. This script is only meant to be used in the
 # repository directory.
 
+# Added an argument that allows one to view the diff
+
 cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .
 cp -r ~/.vim .
 
 git add .bashrc .vimrc .vim copypush .dircolors .screenrc
 
-date=$(date)
-printf "Commit message: "
-read message
-git commit -am "Commit on $date; message: $message"
+if [[ $# == 0 ]]; then
+    date=$(date)
+    printf "Commit message: "
+    read message
+    git commit -am "Commit on $date; message: $message"
 
-git push origin master
+    git push origin master
 
-rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc .dircolors
-rm -r .vim
+    rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc .dircolors
+    rm -r .vim
+elif [[ $1 == "-diff" ]]; then
+    git diff
+fi

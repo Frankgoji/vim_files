@@ -9,7 +9,7 @@ set et ts=4 sw=4 sts=4
 set autoindent
 set t_Co=256
 set encoding=utf-8
-colo distinguished
+" colo distinguished
 set wildmenu
 set hidden
 set linebreak

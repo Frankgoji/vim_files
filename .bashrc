@@ -146,11 +146,13 @@ function error {
 }
 
 # renames filename(s) to get rid of spaces
+# TODO
 function nospace {
     exit 0
 }
 
 # tests nospace
+# TODO
 function testnospace {
     exit 0
 }
