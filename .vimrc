@@ -15,8 +15,8 @@ set hidden
 set linebreak
 set incsearch
 set hlsearch
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+set colorcolumn=80
 syntax on
 " }}}
 
