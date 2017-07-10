@@ -9,7 +9,7 @@ set et ts=4 sw=4 sts=4
 set autoindent
 set t_Co=256
 set encoding=utf-8
-" colo distinguished
+colo distinguished
 set wildmenu
 set hidden
 set linebreak
@@ -46,6 +46,7 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 nnoremap / /\v
+nnoremap <c-p> :set paste!<cr>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader><c-u> viwUe
