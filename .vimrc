@@ -46,6 +46,7 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 nnoremap / /\v
+nnoremap <c-p> :set paste!<cr>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader><c-u> viwUe

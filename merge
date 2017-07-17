@@ -1,4 +1,11 @@
 #! /bin/bash
 
-cp -rf ~/.bashrc ~/.bash_aliases ~/.vim ~/.vimrc ~/.rtorrent.rc ~/.screenrc ~/.dircolors .
-git fetch origin master
+cp -rf ~/.bashrc ~/.bash_aliases ~/.vim ~/.vimrc ~/.rtorrent.rc ~/.screenrc ~/.dircolors ~/.tmux.conf .
+
+if [[ $# < 1 ]]; then
+    git pull origin master
+elif [[ $# == 1 ]]; then
+    git pull origin $1
+else
+    echo "Too many arguments"
+fi

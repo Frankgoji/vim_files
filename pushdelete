@@ -1,3 +1,0 @@
-#! /bin/bash
-
-mv -uf .bashrc .bash_aliases .vim .vimrc .rtorrent.rc .screenrc .dircolors ~

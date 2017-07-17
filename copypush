@@ -1,27 +1,23 @@
 #! /bin/bash
 
 # Copies the .bashrc, .vimrc, and the .vim folder to this directory, then adds
-# them to git, commits them, pushes to the remote repository, and deletes the
-# files in order to save space. This script is only meant to be used in the
-# repository directory.
+# them to git, commits them, pushes to the remote repository. This script is
+# only meant to be used in the repository directory.
 
-# Added an argument that allows one to view the diff
-
-cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .
+cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .tmux.conf .
 cp -r ~/.vim .
 
 git add .bashrc .vimrc .vim copypush pushdelete .dircolors .screenrc
 
-if [[ $# == 0 ]]; then
-    date=$(date)
-    printf "Commit message: "
-    read message
-    git commit -am "Commit on $date; message: $message"
+branch="master"
 
-    git push origin master
-
-    rm .bashrc .vimrc .bash_aliases .rtorrent.rc .screenrc .dircolors
-    rm -r .vim
-elif [[ $1 == "-diff" ]]; then
-    git diff --staged
+if [[ $# > 0 ]]; then
+    branch=$1
 fi
+
+date=$(date)
+printf "Commit message: "
+read message
+git commit -am "Commit on $date; message: $message"
+
+git push origin $branch
