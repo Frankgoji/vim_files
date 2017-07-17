@@ -9,14 +9,14 @@ set et ts=4 sw=4 sts=4
 set autoindent
 set t_Co=256
 set encoding=utf-8
-" colo distinguished
+colo distinguished
 set wildmenu
 set hidden
 set linebreak
 set incsearch
 set hlsearch
-" set textwidth=80
-set colorcolumn=80
+set textwidth=80
+set colorcolumn=+1
 syntax on
 " }}}
 
