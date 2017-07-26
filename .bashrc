@@ -123,7 +123,7 @@ fi
 eval `dircolors ~/.dircolors`
 
 # Add the dv and sshf script to the path
-PATH=$PATH:~/Documents/sshf
+PATH=$PATH:~/Documents/personal_projects/bookmarklets/vid:~/Documents/personal_projects/sshf
 
 # Add the queue environment variable
 export QUEUE="https://www.youtube.com/playlist?list=PLQMsPtgISEJomjGvkY8DbAV-TILxE7rUc"
@@ -146,11 +146,13 @@ function error {
 }
 
 # renames filename(s) to get rid of spaces
+# TODO
 function nospace {
     exit 0
 }
 
 # tests nospace
+# TODO
 function testnospace {
     exit 0
 }
