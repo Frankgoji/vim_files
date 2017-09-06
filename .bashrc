@@ -167,7 +167,7 @@ function prompt_command {
     else
         PS1+="\[\033[0;31m\]:("
     fi
-    PS1+=" \[\033[0m\]\$ "
+    PS1+="${debian_chroot:+($debian_chroot)} \[\033[0m\]\$ "
 }
 
 # returns git prompt

@@ -16,7 +16,7 @@ set linebreak
 set incsearch
 set hlsearch
 " set textwidth=80
-set colorcolumn=80
+set colorcolumn=81
 syntax on
 " }}}
 
@@ -69,7 +69,8 @@ vnoremap <leader>< <Esc>`>a><Esc>`<i<<Esc>`>ll
 " }}}
 
 " Statusline that incorporates ruler and filetype {{{
-set statusline=%f:\ %10y%m%r%h
+set statusline=[%n]
+set statusline+=\ %f:\ %10y%m%r%h
 set statusline+=%=
 set statusline+=(%l/%L),\ %v
 set statusline+=%10P
