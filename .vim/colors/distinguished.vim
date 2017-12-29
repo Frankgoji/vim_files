@@ -99,13 +99,13 @@ call s:ColorDictParser({
 	\ , 'Include'                     : [    173,     '',               '',      'd7875f',        '',               '']
 	\ , 'PreCondit'                   : [    173,     '',               '',      'd7875f',        '',               '']
 	\ , 'Keyword'                     : [    173,     '',               '',      'd7875f',        '',               '']
-	\ , 'Search'                      : [    231,    131,               '',      '000000',  'ffff5f', 'underline,bold']
+	\ , 'Search'                      : ['black',    131,               '',      '000000',  'ffff5f', 'underline,bold']
 	\ , 'Title'                       : [    231,     '',               '',      'ffffff',        '',               '']
 	\ , 'Delimiter'                   : [    246,     '',               '',      '949494',        '',               '']
 	\ , 'StorageClass'                : [    187,     '',               '',      'd7d7af',        '',               '']
 	\ , 'Operator'                    : [    180,     '',               '',      'd7af87',        '',               '']
 	\
-	\ , 'TODO'                        : [    228,     94,           'bold',      'ffff87',  '875f00',           'bold']
+	\ , 'TODO'                        : [  'red',     94,           'bold',      'ffff87',  '875f00',           'bold']
 	\
 	\ , 'SyntasticWarning'            : [    220,     94,               '',      'ffff87',  '875f00',           'bold']
 	\ , 'SyntasticError'              : [    202,     52,               '',      'ffff87',  '875f00',           'bold']

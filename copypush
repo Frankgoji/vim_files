@@ -4,10 +4,10 @@
 # them to git, commits them, pushes to the remote repository. This script is
 # only meant to be used in the repository directory.
 
-cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc .tmux.conf .
+cp ~/.bashrc ~/.bash_aliases ~/.rtorrent.rc ~/.vimrc ~/.dircolors ~/.screenrc ~/.tmux.conf .
 cp -r ~/.vim .
 
-git add .bashrc .vimrc .vim copypush pushdelete .dircolors .screenrc
+git add .bashrc .vimrc .vim copypush pushfiles .dircolors .screenrc
 
 branch="master"
 
