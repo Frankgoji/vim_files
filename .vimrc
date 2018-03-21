@@ -9,7 +9,8 @@ set et ts=4 sw=4 sts=4
 set autoindent
 set t_Co=256
 set encoding=utf-8
-colo distinguished
+silent! colo desert
+silent! colo distinguished
 set wildmode=longest,list
 set wildmenu
 set hidden
@@ -17,7 +18,7 @@ set linebreak
 set incsearch
 set hlsearch
 " set textwidth=80
-set colorcolumn=81
+silent! set colorcolumn=81
 syntax on
 " }}}
 
