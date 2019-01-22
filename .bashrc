@@ -180,14 +180,19 @@ function git_prompt {
         gitmessage+="\[\033[1;37m\][GIT:"
         branch=$(echo $gitstat | sed "s/On branch //" | sed "s/ .*//")
         gitmessage+="$branch "
-        if [[ $(echo $gitstat | grep "Untracked files:") ]]; then
+        if [[ $(grep "Untracked files:" <<< $gitstat) ]]; then
             gitmessage+="\[\033[1;31m\]❌ (untracked files)"
-        elif [[ $(echo $gitstat | grep "Changes to be committed:") ]]; then
+        elif [[ $(grep "Changes to be committed:" <<< $gitstat) ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
-        elif [[ $(echo $gitstat| grep "Changes not staged for commit:") ]]; then
+        elif [[ $(grep "Changes not staged for commit:" <<< $gitstat) ]]; then
             gitmessage+="\[\033[1;31m\]❌ (commit changes)"
         else
             gitmessage+="\[\033[0;32m\]✓"
+        fi
+        if [[ $(grep "Your branch is up-to-date" <<< $gitstat) ]]; then
+            gitmessage+=" \[\033[0;32m\]✓"
+        else
+            gitmessage+=" \[\033[1;31m\]❌ (branch not synced)"
         fi
         gitmessage+="\[\033[1;37m\]] "
         echo "$gitmessage"
