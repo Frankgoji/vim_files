@@ -173,7 +173,7 @@ function prompt_command {
 # returns git prompt
 function git_prompt {
     gitstat=$(git status 2>&1)
-    if [[ $(echo $gitstat | grep -i "fatal: not a git repository") ]]; then
+    if [[ $(echo $gitstat | grep "fatal: .ot a git repository") ]]; then
         echo ""
     else
         gitmessage=""
@@ -189,7 +189,7 @@ function git_prompt {
         else
             gitmessage+="\[\033[0;32m\]✓"
         fi
-        if [[ $(grep "Your branch is up-to-date" <<< $gitstat) ]]; then
+        if [[ $(grep "Your branch is up.to.date" <<< $gitstat) ]]; then
             gitmessage+=" \[\033[0;32m\]✓"
         else
             gitmessage+=" \[\033[1;31m\]❌ (branch not synced)"
