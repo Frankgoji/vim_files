@@ -23,8 +23,6 @@ let s:cpo_save=&cpo
 set cpo&vim
 set noet
 
-inoremap <tab> <space><space><space><space>
-
 " Try to guess when dealing with .html, .txt, or .rst files:
 au BufNewFile,BufRead *.txt call s:FTrobot()
 au BufNewFile,BufRead *.rst call s:FTrobot()
@@ -38,6 +36,7 @@ func! s:FTrobot()
     \ || b:topl =~ '\*\*\*.\{-}\*\*\*'
     \ || b:topl =~ '^# -\*- coding: robot -\*-$'
         setlocal filetype=robot
+        inoremap <tab> <space><space><space><space>
     endif
 endfunc
 
