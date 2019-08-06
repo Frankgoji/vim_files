@@ -1,0 +1,5 @@
+#! /bin/bash
+# Script to diff all of the relevant files in the repo with the local files.
+# Use to identify the files and changes that should be patched, and which shouldn't.
+
+find . -name .git -prune -o -not -type d -not \( -name README -o -name copypush -o -name merge -o -name pushfiles -o -name filesdiff \) -print -exec diff -u ~/{} {} \;
