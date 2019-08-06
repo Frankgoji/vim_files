@@ -173,7 +173,7 @@ function prompt_command {
 # returns git prompt
 function git_prompt {
     gitstat=$(git status 2>&1)
-    if [[ $(echo $gitstat | grep "fatal: .ot a git repository") ]]; then
+    if [[ $(echo $gitstat | grep -i "fatal: .ot a git repository") ]]; then
         echo ""
     else
         gitmessage=""
